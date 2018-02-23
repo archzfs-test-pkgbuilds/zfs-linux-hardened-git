@@ -18,15 +18,15 @@
 pkgbase="zfs-linux-hardened-git"
 pkgname=("zfs-linux-hardened-git" "zfs-linux-hardened-git-headers")
 
-pkgver=2018.02.21.r3327.09302a4ca.4.15.4.a.1
+pkgver=2018.02.22.r3331.7088545d0.4.15.4.a.1
 pkgrel=1
 makedepends=("linux-hardened-headers=4.15.4.a-1" "git" "spl-linux-hardened-git-headers")
 arch=("x86_64")
 url="http://zfsonlinux.org/"
-source=("git+https://github.com/zfsonlinux/zfs.git#commit=09302a4ca86df2a758c5b883e28b0952cfa31ff7")
+source=("git+https://github.com/zfsonlinux/zfs.git#commit=7088545d0166aa05b2c783f18aa821d95a1f023d")
 sha256sums=("SKIP")
 license=("CDDL")
-depends=("kmod" "spl-linux-hardened-git" "zfs-utils-common-git=2018.02.21.r3327.09302a4ca" "linux-hardened=4.15.4.a-1")
+depends=("kmod" "spl-linux-hardened-git" "zfs-utils-common-git=2018.02.22.r3331.7088545d0" "linux-hardened=4.15.4.a-1")
 
 build() {
     cd "${srcdir}/zfs"
