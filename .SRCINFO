@@ -1,6 +1,6 @@
 pkgbase = zfs-linux-hardened-git
 	pkgver = 2018.05.30.r4572.g93491c4bb.4.16.12.a.1
-	pkgrel = 1
+	pkgrel = 2
 	url = http://zfsonlinux.org/
 	arch = x86_64
 	license = CDDL
@@ -19,6 +19,7 @@ pkgname = zfs-linux-hardened-git
 	provides = zfs
 	conflicts = zfs-linux-hardened
 	conflicts = spl-linux-hardened-git
+	replaces = spl-linux-hardened-git
 
 pkgname = zfs-linux-hardened-git-headers
 	pkgdesc = Kernel headers for the Zettabyte File System.
