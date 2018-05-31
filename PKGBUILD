@@ -45,6 +45,7 @@ package_zfs-linux-hardened-git() {
     provides=("zfs")
     groups=("archzfs-linux-hardened-git")
     conflicts=('zfs-linux-hardened' 'spl-linux-hardened-git')
+    replaces=("spl-linux-hardened-git")
     cd "${srcdir}/zfs"
     make DESTDIR="${pkgdir}" install
     cp -r "${pkgdir}"/{lib,usr}
