@@ -48,7 +48,7 @@ package_zfs-linux-hardened-git() {
     install=zfs.install
     provides=("zfs" "spl")
     groups=("archzfs-linux-hardened-git")
-    conflicts=("zfs-dkms" "zfs-dkms-git"'zfs-linux-hardened' 'spl-linux-hardened-git' 'spl-linux-hardened' "spl-dkms" "spl-dkms-git")
+    conflicts=("zfs-dkms" "zfs-dkms-git" 'zfs-linux-hardened' 'spl-linux-hardened-git' 'spl-linux-hardened' "spl-dkms" "spl-dkms-git")
     replaces=("spl-linux-hardened-git")
     cd "${srcdir}/zfs"
     make DESTDIR="${pkgdir}" install
