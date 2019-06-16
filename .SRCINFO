@@ -1,16 +1,15 @@
 pkgbase = zfs-linux-hardened-git
-	pkgver = 2019.05.23.r5134.g75c09c506_5.0.18.a.1
+	pkgver = 2019.06.14.r5200.gc1b5801bb_5.1.9.a.1
 	pkgrel = 1
 	url = http://zfsonlinux.org/
 	arch = x86_64
 	license = CDDL
-	makedepends = python
-	makedepends = linux-hardened-headers=5.0.18.a-1
+	makedepends = linux-hardened-headers=5.1.9.a-1
 	makedepends = git
 	depends = kmod
-	depends = zfs-utils-git=2019.05.23.r5134.g75c09c506
-	depends = linux-hardened=5.0.18.a-1
-	source = git+https://github.com/zfsonlinux/zfs.git#commit=75c09c5060b85a144cc794ae857520662dc8fd58
+	depends = zfs-utils-git=2019.06.14.r5200.gc1b5801bb
+	depends = linux-hardened=5.1.9.a-1
+	source = git+https://github.com/zfsonlinux/zfs.git#commit=c1b5801bb5af0055e5f3d263beaa07026103e212
 	sha256sums = SKIP
 
 pkgname = zfs-linux-hardened-git
@@ -24,6 +23,9 @@ pkgname = zfs-linux-hardened-git
 	conflicts = zfs-dkms-rc
 	conflicts = spl-dkms
 	conflicts = spl-dkms-git
+	conflicts = zfs-linux-hardened
+	conflicts = spl-linux-hardened-git
+	conflicts = spl-linux-hardened
 	replaces = spl-linux-hardened-git
 
 pkgname = zfs-linux-hardened-git-headers
