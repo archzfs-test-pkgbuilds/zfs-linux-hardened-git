@@ -17,20 +17,19 @@
 #
 pkgbase="zfs-linux-hardened-git"
 pkgname=("zfs-linux-hardened-git" "zfs-linux-hardened-git-headers")
-_commit='f20fb199e60722abc052b6034bddb6b83d870c99'
-_zfsver="2021.06.25.r6982.gf20fb199e"
-_kernelver="5.12.12.hardened1-1"
+_commit='07e95b4670dc421ec726a2b4efa97a22fe572005'
+_zfsver="2023.12.27.r8950.g07e95b4670"
+_kernelver="6.6.8.hardened1-1"
+_kernelver_full="6.6.8.hardened1-1"
 _extramodules="${_kernelver/.hardened/-hardened}-hardened"
 
 pkgver="${_zfsver}_$(echo ${_kernelver} | sed s/-/./g)"
 pkgrel=1
 makedepends=("linux-hardened-headers=${_kernelver}" "git")
 arch=("x86_64")
-url="https://zfsonlinux.org/"
-source=("git+https://github.com/zfsonlinux/zfs.git#commit=${_commit}"
-              "linux-5.12-compat.patch")
-sha256sums=("SKIP"
-                        "9c601804dc473766d85da2198aa3769707e051d3659dc82dd1302edd5e91a8cf")
+url="https://openzfs.org/"
+source=("git+https://github.com/openzfs/zfs.git#commit=${_commit}")
+sha256sums=("SKIP")
 license=("CDDL")
 depends=("kmod" "zfs-utils-git=${_zfsver}" "linux-hardened=${_kernelver}")
 
@@ -53,7 +52,7 @@ package_zfs-linux-hardened-git() {
     conflicts=("zfs-dkms" "zfs-dkms-git" "zfs-dkms-rc" "spl-dkms" "spl-dkms-git" 'zfs-linux-hardened' 'spl-linux-hardened-git' 'spl-linux-hardened')
     replaces=("spl-linux-hardened-git")
     cd "${srcdir}/zfs"
-    make DESTDIR="${pkgdir}" INSTALL_MOD_PATH=/usr install
+    make DESTDIR="${pkgdir}" INSTALL_MOD_PATH=${pkgdir}/usr INSTALL_MOD_STRIP=1 install
     # Remove src dir
     rm -r "${pkgdir}"/usr/src
 }
